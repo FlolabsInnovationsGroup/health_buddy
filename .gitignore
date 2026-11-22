@@ -1,0 +1,80 @@
+# ==========================================
+# HEALTH BUDDY
+# ==========================================
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media/
+staticfiles/
+
+# Test and coverage
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Type checking and linting
+.mypy_cache/
+.ruff_cache/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node / Frontend
+node_modules/
+dist/
+build/
+.next/
+coverage/
+
+# Secrets and credentials
+*.pem
+*.key
+*.cert
+*.crt
+credentials.json
+service-account.json
+
+# Docker
+docker-compose.override.yml
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.bak
+
+# Local databases and data exports
+*.dump
+*.sql.gz
+*.sqlite3

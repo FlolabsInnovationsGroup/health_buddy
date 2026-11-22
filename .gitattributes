@@ -1,0 +1,2 @@
+# Normalise line endings so Windows, macOS and Linux contributors (and Docker) agree.
+* text=auto eol=lf
