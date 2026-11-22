@@ -1,7 +1,7 @@
 """Production. Every value that matters for security is explicit here."""
 
 from .base import *  # noqa: F403
-from .base import DATABASES, env
+from .base import DATABASES, REST_FRAMEWORK, env
 
 DEBUG = False
 ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS")  # required, no default
@@ -22,3 +22,7 @@ SILENCED_SYSTEM_CHECKS = ["security.W021"]
 # Database connections: reuse them, and require TLS to PostgreSQL.
 DATABASES["default"]["CONN_MAX_AGE"] = env.int("DB_CONN_MAX_AGE", default=60)
 DATABASES["default"].setdefault("OPTIONS", {})["sslmode"] = env("DB_SSLMODE", default="require")
+
+# Rate limiting needs the real client address. Set this to the number of proxies in
+# front of the app (one load balancer = 1), otherwise every client shares one limit.
+REST_FRAMEWORK["NUM_PROXIES"] = env.int("DRF_NUM_PROXIES", default=1)
