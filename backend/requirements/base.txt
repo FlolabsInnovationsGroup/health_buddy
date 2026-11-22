@@ -7,3 +7,6 @@ psycopg[binary]>=3.2,<4.0
 
 # Environment configuration
 django-environ>=0.12,<1.0
+
+# Authentication tokens
+djangorestframework-simplejwt>=5.5,<6.0
